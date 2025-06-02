@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="departure.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <nav class="bg-red-900 text-white">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Mobile menu button-->
+              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <!--
+                  Icon when menu is closed.
+      
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!--
+                  Icon when menu is open.
+      
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+                <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex shrink-0 items-center">
+                <img class="h-8 w-auto " src="https://img.icons8.com/?size=50&id=12665&format=png" alt="Your Company">
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                   <a href="index.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white hover:text-black" aria-current="page">Home</a>
+                  <a href="about.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white hover:text-black">About</a>
+                  <a href="rule.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white hover:text-black">Airline rules</a>
+                  <a href="departure.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white hover:text-black">Departures & Arrivals</a>
+                  <a href="contact.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white hover:text-black">Contacts</a>
+                  <a href="more.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white hover:text-black">More</a>
+                </div>
+              </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
+                <span class="absolute -inset-1.5"></span>
+                <span class="sr-only">View notifications</span>
+                <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                </svg>
+              </button>
+      
+              <!-- Profile dropdown -->
+              <div class="relative ml-3">
+                <div>
+                  <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <span class="absolute -inset-1.5"></span>
+                    <span class="sr-only">Open user menu</span>
+
+                  </button>
+                </div>
+      
+                <!--
+                  Dropdown menu, show/hide based on menu state.
+      
+                  Entering: "transition ease-out duration-100"
+                    From: "transform opacity-0 scale-95"
+                    To: "transform opacity-100 scale-100"
+                  Leaving: "transition ease-in duration-75"
+                    From: "transform opacity-100 scale-100"
+                    To: "transform opacity-0 scale-95"
+                -->
+        
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pt-2 pb-3">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+             <a href="index.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white hover:text-black" aria-current="page">Home</a>
+            <a href="about.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white hover:text-black" aria-current="page">About</a>
+            <a href="rule.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white hover:text-black ">Airline rule</a>
+            <a href="departure.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white hover:text-black">Departures & Arrivals</a>
+            <a href="contact.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white hover:text-black">Contacts</a>
+            <a href="more.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white hover:text-black">More</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="flex justify-around " id="departure">
+   
+
+<div id="depart" class="mt-50px">
+
+
+
+  
+    <main class="max-w-6xl mx-auto py-10 px-4 grid md:grid-cols-2 gap-8">
+      
+      <!-- Departures -->
+      <section class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-blue-800 mb-4">Departures</h2>
+        <table class="w-full border-collapse border text-left table-auto">
+          <thead>
+            <tr class="text-gray-600 border-b">
+              <th class="py-2 border">Flight</th>
+              <th class="py-2 border">Destination</th>
+              <th class="py-2 border">Time</th>
+              <th class="py-2 border">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="py-2 border">GJ202</td>
+              <td class="py-2 border">Zurich</td>
+              <td class="py-2 border">14:30</td>
+              <td class="py-2 border text-green-600">On Time</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-2 border">GJ153</td>
+              <td class="py-2 border">Istanbul</td>
+              <td class="py-2 border">15:10</td>
+              <td class="py-2 border text-yellow-600">Delayed</td>
+            </tr>
+            <tr>
+              <td class="py-2 border">GJ310</td>
+              <td class="py-2 border">Frankfurt</td>
+              <td class="py-2 border">16:00</td>
+              <td class="py-2 border text-red-600">Cancelled</td>
+                       <tr class="border-b">
+              <td class="py-2 border">GJ455</td>
+              <td class="py-2 border">Berlin</td>
+              <td class="py-2 border">13:50</td>
+              <td class="py-2 border text-green-600">Landed</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-2 border">GJ398</td>
+              <td class="py-2 border">Rio de Janeiro</td>
+              <td class="py-2 border">14:45</td>
+              <td class="py-2 border text-yellow-600">Delayed</td>
+            </tr>
+            <tr>
+              <td class="py-2 border">GJ210</td>
+              <td class="py-2 border">Madrid</td>
+              <td class="py-2 border">15:30</td>
+              <td class="py-2 border text-blue-600">On Approach</td>
+            </tr>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+  
+      <!-- Arrivals -->
+      <section class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-blue-800 mb-4">Arrivals</h2>
+        <table class="w-full border-collapse border text-left table-auto">
+          <thead>
+            <tr class="text-gray-600 border-b">
+              <th class="py-2 border">Flight</th>
+              <th class="py-2 border">Origin</th>
+              <th class="py-2 border">Time</th>
+              <th class="py-2 border">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="py-2 border">GJ455</td>
+              <td class="py-2 border">Vienna</td>
+              <td class="py-2 border">13:50</td>
+              <td class="py-2 border text-green-600">Landed</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-2 border">GJ398</td>
+              <td class="py-2 border">Munich</td>
+              <td class="py-2 border">14:45</td>
+              <td class="py-2 border text-yellow-600">Delayed</td>
+            </tr>
+            <tr>
+              <td class="py-2 border">GJ210</td>
+              <td class="py-2 border">Prague</td>
+              <td class="py-2 border">15:30</td>
+              <td class="py-2 border text-blue-600">On Approach</td>
+            </tr>
+                     <tr class="border-b">
+              <td class="py-2 border">GJ455</td>
+              <td class="py-2 border">Vienna</td>
+              <td class="py-2 border">13:50</td>
+              <td class="py-2 border text-green-600">Landed</td>
+            </tr>
+            <tr class="border-b bg-gray-50">
+              <td class="py-2 border">GJ398</td>
+              <td class="py-2 border">Munich</td>
+              <td class="py-2 border">14:45</td>
+              <td class="py-2 border text-yellow-600">Delayed</td>
+            </tr>
+            <tr>
+              <td class="py-2 border">GJ210</td>
+              <td class="py-2 border">Prague</td>
+              <td class="py-2 border">15:30</td>
+              <td class="py-2 border text-blue-600">On Approach</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+  
+    </main>
+
+  
+</div>
+
+      </div>
+  <footer class="footer">
+    <p>© 2025 Gjilan International Airport</p>
+  </footer>
+
+  </body>
+
+</html>

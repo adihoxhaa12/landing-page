@@ -1,0 +1,53 @@
+#rule{
+background-image:url(https://www.stantec.com/content/dam/stantec/images/projects/0012/logan-international-airport-32557.jpg);
+
+
+height: 965px;
+width: 1603px;
+background-repeat: no-repeat;
+margin: 0;
+
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #000000;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.rules-section {
+  max-width: 800px;
+   margin-left: 378px;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
+}
+
+.rules-section h2 {
+  font-size: 1.8rem;
+  color: #003366;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.rules-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #333;
+  line-height: 1.7;
+}
+
+.rules-list li {
+  margin-bottom: 1rem;
+}
+.rules-list strong {
+  color: #000;
+}
+
